@@ -1,0 +1,14 @@
+html,body {
+	height:100%;
+    background:center no-repeat fixed url('../Media/estimote.jpg');
+    background-size: cover;
+    color:#444;
+    font-family: 'Lato', sans-serif;
+}
+
+
+@media (min-width:768px) {
+    h1 {
+        font-size:68px;
+    }
+}
