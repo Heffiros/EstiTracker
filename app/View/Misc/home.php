@@ -50,14 +50,15 @@
             </div>
             <div class="modal-body row">
                 <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6>
-                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action='' method='POST'>
                 <fieldset>
                 	<div class="form-group">
-                    <?php echo $form->input('email') ?><br/>
+                    <?php echo $form->input('mail') ?><br/>
                 	</div>
                 	<div class="form-group">
                     <?php echo $form->input('password', 'Mot de passe', 'password') ?><i>(taille : 8 a 16 caractères)</i><br/>
                 	</div>
+                	<input type="submit"  class="btn btn-primary"/>
                 </fieldset>
                 </form>
             </div>
