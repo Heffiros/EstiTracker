@@ -16,7 +16,7 @@ class Register extends Base
             'mail' => FILTER_VALIDATE_EMAIL,
         ),
 		'unique' => array(
-			'mail' => 'users',
+			'mail' => 'esti_user',
 		),
 	);
 } 

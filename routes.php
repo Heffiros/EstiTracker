@@ -1,5 +1,5 @@
 <?php
 return array(
 	'' => 'Misc#home',
-	'/backoffice' => 'Acceuil#home'
+	'backoffice' => 'Acceuil#home'
 );

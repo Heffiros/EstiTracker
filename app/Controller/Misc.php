@@ -23,9 +23,9 @@ class Misc extends Base
         if ($this->method == 'POST' && $form->isValid()) {
             $user = new Model\User($form->getValues());
             $user->save();
-            //$_SESSION['user_id'] = $user->getPk();
+            $_SESSION['user_id'] = $user->getPk();
 
-            $this->redirect('/backoffice');
+            $this->redirect('backoffice');
         }
         return array('form' => $form);
 	}
