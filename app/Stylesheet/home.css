@@ -1,11 +1,15 @@
 html,body {
 	height:100%;
-    background:center no-repeat fixed url('../Media/estimote.jpg');
-    background-size: cover;
-    color:#444;
-    font-family: 'Lato', sans-serif;
+	background:center no-repeat fixed url('../Media/estimote.jpg');
+	background-size: cover;
+    	color:#444;
+    	font-family: 'Lato', sans-serif;
+	width : 100%;
 }
 
+.row{
+	margin: 0;
+}
 
 @media (min-width:768px) {
     h1 {
