@@ -58,7 +58,9 @@
                 	<div class="form-group">
                     <?php echo $form->input('password', 'Mot de passe', 'password') ?><i>(taille : 8 a 16 caractères)</i><br/>
                 	</div>
+                	<div class="form-group">
                 	<input type="submit"  class="btn btn-primary"/>
+                	</div>
                 </fieldset>
                 </form>
             </div>

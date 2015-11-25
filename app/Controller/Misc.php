@@ -13,16 +13,19 @@ class Misc extends Base
 {
 	public function homeAction()
 	{
+
+		$reflector = new \ReflectionClass('Model\\User');
+		echo $reflector->getFileName();
+		echo $reflector->getStartLine();
+
+
 		$form = new Form\Register($_POST, array('db' => $this->db));
-        echo 'aa';
         if ($this->method == 'POST' && $form->isValid()) {
-  			var_dump($form->getValues());
-            exit();
             $user = new Model\User($form->getValues());
             $user->save();
             //$_SESSION['user_id'] = $user->getPk();
 
-            //$this->redirect('/backoffice');
+            $this->redirect('/backoffice');
         }
         return array('form' => $form);
 	}

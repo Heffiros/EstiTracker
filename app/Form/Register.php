@@ -11,7 +11,6 @@ class Register extends Base
 		),
 		'pattern' => array(
 			'password' => '/^.{6,16}$/',
-			'birthday' =>'/^\d{4}-\d{2}-\d{2}$/',
 		),
         'filter' => array(
             'mail' => FILTER_VALIDATE_EMAIL,
