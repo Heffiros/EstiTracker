@@ -11,7 +11,7 @@
 	<nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
 		<div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand text-danger" href="#">Esti Controller</a>
+            <a class="navbar-brand text-danger" href= ".">EstiTracker</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible">
         </div>
