@@ -6,15 +6,12 @@ class User extends Base
 {
 	static protected $table = 'esti_user';
 	static protected $pk = 'id';
-	static protected $fields = array('email', 'password', 'birthday', 'first_name', 'last_name');
+	static protected $fields = array('mail', 'password');
+    
     public function save()
     {
         if (!$this->exists())
-            $this->values['password'] = encrypt($this->values['password']);
+            $this->values['password'] = $this->values['password'];
         parent::save();
-    }
-    public function getFullname()
-    {
-        return $this['first_name'] . ' ' . $this['last_name'];
     }
 }
