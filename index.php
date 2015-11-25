@@ -1,4 +1,5 @@
 <?php 
+error_reporting(-1);
 require __DIR__ . '/vendor/autoload.php';
 /**
  * ______   ____      _   _  ____ ________    ___________________________
@@ -21,7 +22,6 @@ require __DIR__ . '/vendor/autoload.php';
  *  - db_config.php (if needed)
  *  - routes.php
  */
-error_reporting(-1);
 spl_autoload_register(function ($class)
 {
     foreach (array('app', 'lib') as $prefix)
@@ -42,7 +42,7 @@ try {
 	$routes = require 'routes.php';
 	$router = new Minima\Dispatcher($routes);
 	if (file_exists('db_config.php') && is_array($db_config = include 'db_config.php')) {
-		$db = new PDO('mysql:host=' . $db_config['host'] . ';dbname=' . $db_config['dbname'],
+		$db = new PDO('mysql:host=' . $db_config['host'] . ';port=3306;dbname=' . $db_config['dbname'],
 			$db_config['user'], $db_config['pass'],
 			array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"));
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
