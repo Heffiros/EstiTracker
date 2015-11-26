@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
   </head>
   <body>
-    <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-trans navbar-fixed-top" role="navigation" style="position:relative;">
       <div class="container">
 	<div class="navbar-header">
 	  <a class="navbar-brand text-danger" href="" style="color: #D6D325;">EstiTracker</a>
