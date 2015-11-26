@@ -2,6 +2,7 @@
 namespace Controller;
 use Minima\Controller\Base;
 use \Model;
+use \Form;
 
 //Ce controleur sera celui qui permetra de gérer la page d'acceuil après la connexion.
 //Il contiendra la DataTable avec la liste de tous les Beacon enregistré
@@ -10,6 +11,16 @@ class Acceuil extends Base
 {
 	public function homeAction()
 	{
+		$form = new Form\RegisterEstimote($_POST, array('db' => $this->db));
 		
+		if ($this->method == 'POST' && $form->isValid()) {
+            $user = new Model\User($form->getValues());
+            $user->save();
+            $_SESSION['user_id'] = $user->getPk();
+
+            $this->redirect('backoffice');
+        }
+
+		return array('form' => $form);
 	}
 }
