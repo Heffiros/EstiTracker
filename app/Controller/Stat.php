@@ -38,11 +38,15 @@ class Stat extends Base
 	}
 
 
-	public function checkEstiTypeAction()
+	public function checkEstiTypeApiAction()
 	{
 		
 		//Ajout de la méthode pour récup le type du beacon
-		//$estimote = new Model\Estimote($vals)*
+		
+		$vals = array('beacon_ref' =>  $_GET['beacon_key']);
+		$estimote = Model\Estimote::find($vals);
+		var_dump($estimote);
+		exit();
 		//$type = $estimote->type
 		$return = array("state" => "");
 		if ($type == "1") {
