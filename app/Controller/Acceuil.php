@@ -14,11 +14,11 @@ class Acceuil extends Base
 		$form = new Form\RegisterEstimote($_POST, array('db' => $this->db));
 		
 		if ($this->method == 'POST' && $form->isValid()) {
-            $user = new Model\User($form->getValues());
-            $user->save();
-            $_SESSION['user_id'] = $user->getPk();
-
-            $this->redirect('backoffice');
+            $estimote = new Model\Estimote($form->getValues());
+            $estimote['created'] = time();
+            $estimote['user_id'] = $this->session->getUser()->getPk();
+            $estimote->save();
+            $this->redirect('');
         }
 
 		return array('form' => $form);
