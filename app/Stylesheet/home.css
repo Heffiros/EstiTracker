@@ -31,13 +31,13 @@ h1 {
 }
 
 .btn-default:active {
-	color: white;
-	background-color: #3B3A74;
+	color: #3B3A74;
+	background-color: white;
 }
 
 .btn-default:focus {
-	color: white;
-	background-color: #3B3A74;
+	color: #3B3A74;
+	background-color: white;
 	outline: 0;
 }
 
