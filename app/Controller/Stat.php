@@ -38,10 +38,23 @@ class Stat extends Base
 	}
 
 
-	public function checkEstiType()
+	public function checkEstiTypeAction()
 	{
-		$type = $_GET['beacon_key'];
 		
+		//Ajout de la méthode pour récup le type du beacon
+		//$estimote = new Model\Estimote($vals)*
+		//$type = $estimote->type
+		$return = array("state" => "");
+		if ($type == "1") {
+			$value = array('client_id' => $_GET['idUser'] , 'beacon_ref' => $_GET['beacon_key'], 'date_pass'  => date('Y-m-d'));
+			$byStander = new Model\ByStander($value);
+			$byStander->addOne();
+		} else if ($type == "2") {
+			$return['state'] = "timestamp";
+		} else if ($type == "3") {
+			$return['state'] = "lien";
+		}
+		exit(json_encode($return));
 	}
 
 }
