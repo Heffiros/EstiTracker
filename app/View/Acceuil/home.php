@@ -26,7 +26,7 @@ var_dump($session->getUser()['mail']);
                     <?php echo $form->input('beacon_ref','reference_estimote','text') ?><br/>
                 	</div>
                 	<div class="form-group">
-                    <?php echo $form_login->input('password', 'Mot de passe', 'password') ?><i>(taille : 8 a 16 caractères)</i><br/>
+                    <?php echo $form_login->input('content', 'estimote_content_ckeditor', 'text') ?><br/>
                 	</div>
                 	<div class="form-group">
                 	<input type="submit"  class="btn btn-primary"/>
