@@ -11,9 +11,9 @@ use \Form;
 //Les nouveaux :
 // - Recenssement des clics sur les pages promos ou publicitaire push sur les téléphones
 // - Calcule du chiffre d'affaire
-class Stat extends Base
+class Api extends Base
 {
-	
+	//Permet de s'identifier sur l'app
 	public function connectApiAction()
 	{
 		$vals = array('mail' => $_GET['mail'], 'password' => $_GET['password']);
@@ -27,6 +27,7 @@ class Stat extends Base
 
 	}
 
+	//Permet au client de créer un compte
 	public function createAccountApiAction()
 	{
 		$value = array('mail' => $_GET['mail'], 'password' => $_GET['password'], 'date_created' => date("Y-m-d"));
@@ -37,11 +38,9 @@ class Stat extends Base
         exit(json_encode($retour_id));
 	}
 
-
+	//Api qui vérifier quel comportemment doit avoir le beacon
 	public function checkEstiTypeApiAction()
 	{
-		
-		//Ajout de la méthode pour récup le type du beacon
 		
 		$vals = array('beacon_ref' =>  $_GET['beacon_key']);
 		$estimote = Model\Estimote::find($vals);
@@ -59,5 +58,24 @@ class Stat extends Base
 		exit(json_encode($return));
 	}
 
+
+	//Méthode qui affiche le content publicaire
+	public function  affWebViewApiAction()
+	{
+
+		$vals = array('beacon_ref' =>  $_GET['beacon_key']);
+		$estimote = Model\Estimote::find($vals);
+		$content = $estimote->getContent();
+		exit($content);
+	}
+
+	//Méthode qui enregistre le temps de présences de la personne
+	public function addTimeConnexionApiAction()
+	{
+		$vals = array('beacon_ref' => $_GET['beacon_key'], 'client_id' => $_GET['idUser'], 'time' => $_GET['timestamp']);
+		$userTimePass = new Model\TimePass($vals);
+		$userTimePass->save();
+		exit(json_encode("OK"));
+	}
 }
 

@@ -17,4 +17,9 @@ class Estimote extends Base
     {
     	return $this->values['type'];
     }
+
+    public function getContent()
+    {
+    	return $this->values['content'];
+    }
 }
