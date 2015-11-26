@@ -25,16 +25,18 @@
             </div>
             <div class="modal-body row">
                 <h6 class="text-center">COMPLETE THESE FIELDS TO CONNECT</h6>
-                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action="php/connection.php" method="post" >
-                    <div class="form-group">
-                        <input name="email" type="text" class="form-control input-lg" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input name="password" type="password" class="form-control input-lg" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-danger btn-lg btn-block">Connect</button>
-                    </div>
+                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action="" method="post" >
+                    <fieldset>
+                	<div class="form-group">
+                    <?php echo $form_login->input('mail') ?><br/>
+                	</div>
+                	<div class="form-group">
+                    <?php echo $form_login->input('password', 'Mot de passe', 'password') ?><i>(taille : 8 a 16 caractères)</i><br/>
+                	</div>
+                	<div class="form-group">
+                	<input type="submit"  class="btn btn-primary"/>
+                	</div>
+                </fieldset>
                 </form>
             </div>
            

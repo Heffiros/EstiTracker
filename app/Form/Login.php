@@ -11,7 +11,7 @@ class Login extends Base {
     );
     protected function validate()
     {
-        //$this->fields[] = 'user_id'; // hack
+        $this->fields[] = 'user_id'; // hack
         
         $vals = array('mail' => $this->values['mail'], 'password' => $this->values['password']);
         if ($user = Model\User::find($vals)) {

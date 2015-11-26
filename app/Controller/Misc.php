@@ -14,12 +14,9 @@ class Misc extends Base
 	public function homeAction()
 	{
 
-		$reflector = new \ReflectionClass('Model\\User');
-		echo $reflector->getFileName();
-		echo $reflector->getStartLine();
-
-
 		$form = new Form\Register($_POST, array('db' => $this->db));
+		$form_login = new Form\Login($_POST, array('db' => $this->db));
+        
         if ($this->method == 'POST' && $form->isValid()) {
             $user = new Model\User($form->getValues());
             $user->save();
@@ -27,6 +24,11 @@ class Misc extends Base
 
             $this->redirect('backoffice');
         }
-        return array('form' => $form);
+
+ 		if ($this->method == 'POST' && $form_login->isValid()) {
+ 			$_SESSION['user_id'] = $form_login->getValues()['user_id'];
+            $this->redirect('backoffice');
+ 		}
+        return array('form' => $form, 'form_login' => $form_login);
 	}
 }
