@@ -45,9 +45,7 @@ class Stat extends Base
 		
 		$vals = array('beacon_ref' =>  $_GET['beacon_key']);
 		$estimote = Model\Estimote::find($vals);
-		var_dump($estimote);
-		exit();
-		//$type = $estimote->type
+		$type = $estimote->getType();
 		$return = array("state" => "");
 		if ($type == "1") {
 			$value = array('client_id' => $_GET['idUser'] , 'beacon_ref' => $_GET['beacon_key'], 'date_pass'  => date('Y-m-d'));

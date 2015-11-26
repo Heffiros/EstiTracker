@@ -12,4 +12,9 @@ class Estimote extends Base
     {
         parent::save();
     }
+
+    public function getType()
+    {
+    	return $this->values['type'];
+    }
 }
