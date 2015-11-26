@@ -1,1 +1,1 @@
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'estitracker.users' doesn't exist
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'created_at' in 'field list'
