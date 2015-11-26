@@ -30,17 +30,6 @@ h1 {
 	background-color: #3B3A74;
 }
 
-.btn-default:active {
-	color: #3B3A74;
-	background-color: white;
-}
-
-.btn-default:focus {
-	color: #3B3A74;
-	background-color: white;
-	outline: 0;
-}
-
 .btn-default {
 	color: #3B3A74;
 	background-color: white;
