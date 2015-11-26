@@ -1,5 +1,9 @@
 <link rel="stylesheet" type="text/css" href="<?php echo BASEPATH ?>app/Stylesheet/home.css" />
 
+<div class="calque">
+
+</div>
+
 <section class="container-fluid" id="section1">
     <div class="v-center">
         <h1 class="text-center">Esti Controller</h1>
@@ -21,17 +25,17 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h2 class="text-center"><img src="//placehold.it/110" class="img-circle"><br>Login</h2>
+                <h2 class="text-center"><br>Login</h2>
             </div>
             <div class="modal-body row">
                 <h6 class="text-center">COMPLETE THESE FIELDS TO CONNECT</h6>
                 <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action="" method="post" >
                     <fieldset>
                 	<div class="form-group">
-                    <?php echo $form_login->input('mail') ?><br/>
+                    <input type="text" name="mail" id="mail" class="form-control" placeholder="Mail">
                 	</div>
                 	<div class="form-group">
-                    <?php echo $form_login->input('password', 'Mot de passe', 'password') ?><i>(taille : 8 a 16 caractères)</i><br/>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Mot de passe (taille : 8 a 16 caractères)">
                 	</div>
                 	<div class="form-group">
                 	<input type="submit"  class="btn btn-primary"/>
@@ -55,10 +59,10 @@
                 <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action='' method='POST'>
                 <fieldset>
                 	<div class="form-group">
-                    <?php echo $form->input('mail') ?><br/>
+                    <input type="text" name="mail" id="mail" class="form-control" placeholder="Mail">
                 	</div>
                 	<div class="form-group">
-                    <?php echo $form->input('password', 'Mot de passe', 'password') ?><i>(taille : 8 a 16 caractères)</i><br/>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Mot de passe (taille : 8 a 16 caractères)">
                 	</div>
                 	<div class="form-group">
                 	<input type="submit"  class="btn btn-primary"/>
