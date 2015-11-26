@@ -7,6 +7,8 @@ echo "<br >";
 var_dump($session->getUser()['mail']);
 
 ?>
+<link rel="stylesheet" type="text/css" href="<?php echo BASEPATH ?>app/Stylesheet/home.css" />
+
 <!-- MODAL CONNETION-->
 
                 <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action="" method="post" >
@@ -25,6 +27,13 @@ var_dump($session->getUser()['mail']);
                 	</div>
                 </fieldset>
                 </form>
+
+
+<script>
+
+	CKEDITOR.replace('content');
+	console.log(CKEDITOR.instances['editor']);
+</script>
 <!--scripts loaded here-->
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
