@@ -1,5 +1,1 @@
-<<<<<<< Updated upstream
-SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'client_id' cannot be null
-=======
 You need to pass in a PDO-like `db` object as variable
->>>>>>> Stashed changes

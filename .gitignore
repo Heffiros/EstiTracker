@@ -2,3 +2,5 @@
 db_config.php
 
 res/log/error.log
+
+*.log
