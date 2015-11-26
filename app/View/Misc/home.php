@@ -6,8 +6,8 @@
 
 <section class="container-fluid" id="section1">
     <div class="v-center">
-        <h1 class="text-center">Esti Controller</h1>
-        <h2 class="text-center lato animate slideInDown">Change It To Say <b>Something</b> Unique</h2>
+        <h1 class="text-center">EstiTracker</h1>
+        <h2 class="text-center lato animate slideInDown ">La nouvelle interface <b>B2C</b></h2>
         <p class="text-center">
             <br>
             <a href="#" style="width:212px;" class="btn btn-default btn-lg btn-huge lato" data-toggle="modal" data-target="#myModal1">Create an acount</a>

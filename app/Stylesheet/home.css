@@ -8,12 +8,42 @@ html,body {
 	position: absolute;
 }
 
+.lato {
+	color: #9AD9FC;
+}
+
+h1 {
+	color: #A6E4CF;
+	font-weight: bold;
+}
+
 .calque {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.7);
 	position: absolute;
 	z-index: 20;
+}
+
+.btn-default:hover {
+	color: white;
+	background-color: #3B3A74;
+}
+
+.btn-default:active {
+	color: white;
+	background-color: #3B3A74;
+}
+
+.btn-default:focus {
+	color: white;
+	background-color: #3B3A74;
+	outline: 0;
+}
+
+.btn-default {
+	color: #3B3A74;
+	background-color: white;
 }
 
 
