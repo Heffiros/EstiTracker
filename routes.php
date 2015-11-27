@@ -8,5 +8,5 @@ return array(
 	'api/aff' => 'Api#affWebViewApi',
 	'api/addtime' => 'Api#addTimeConnexionApi',
 	'stat/select' => 'Stat#home',
-	'stat/stat_chart_1' => 'Stat#allBystantders'
+	'stat/stat_chart_1' => 'Stat#allBystanders'
 );

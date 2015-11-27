@@ -6,14 +6,22 @@ use \Form;
 
 class Stat extends Base
 {
-	public function home()
+	public function homeAction()
 	{
 		
 	}
 
-	public function allBystantders()
+	public function allBystandersAction()
 	{
-		$moyenneByStanders = $this->db->query("SELECT COUNT(*) FROM esti_stat GROUP BY date_pass");
-		return array('moyenneByStanders' => $moyenneByStanders);
+		$moyenneByStanders = $this->db->query("SELECT COUNT(*) as nb, beacon_ref FROM esti_stat WHERE date_pass = DATE(NOW()) GROUP BY beacon_ref");
+		$moyenneByStanders = $moyenneByStanders->fetchAll();
+		
+		$return = "";
+		foreach ($moyenneByStanders as $row) {
+					$return .= "['" . $row["beacon_ref"] . "','" . $row["nb"]. "'],";
+		}
+		//$return[strlen($return) - 1] = "";
+		echo $return;
+		return array('return' => $return);
 	}
 }

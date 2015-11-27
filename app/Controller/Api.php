@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace Controller;
 use Minima\Controller\Base;
 use \Model;
@@ -43,6 +43,7 @@ class Api extends Base
 	{
 		
 		$vals = array('beacon_ref' =>  $_GET['beacon_key']);
+		echo $_GET['beacon_key'];
 		$estimote = Model\Estimote::find($vals);
 		$type = $estimote->getType();
 		$return = array("state" => "");
@@ -53,7 +54,7 @@ class Api extends Base
 		} else if ($type == "2") {
 			$return['state'] = "timestamp";
 		} else if ($type == "3") {
-			$return['state'] = "lien";
+			$return['state'] = "http://estitracker.esy.es/index.php/api/aff?beacon_key=" . $_GET["beacon_key"];
 		}
 		exit(json_encode($return));
 	}
@@ -62,7 +63,6 @@ class Api extends Base
 	//Méthode qui affiche le content publicaire
 	public function  affWebViewApiAction()
 	{
-
 		$vals = array('beacon_ref' =>  $_GET['beacon_key']);
 		$estimote = Model\Estimote::find($vals);
 		$content = $estimote->getContent();

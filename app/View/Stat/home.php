@@ -7,7 +7,7 @@
 </select>
 
 <span id="contenu_dyna"></span>
-
+<div id="curve_chart" style="width: 900px; height: 500px"></div>
 <script>
 
 $(".target" ).change(function() {
