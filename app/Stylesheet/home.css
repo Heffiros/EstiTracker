@@ -12,6 +12,10 @@ html,body {
 	color: #9AD9FC;
 }
 
+.modal-dialog {
+	width: 80%;
+}
+
 h1 {
 	color: #A6E4CF;
 	font-weight: bold;
