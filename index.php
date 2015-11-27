@@ -35,7 +35,7 @@ function array_extract($array, array $cols)
 		$vals[$col] = $array[$col];
 	return $vals;
 }
-define('BASEPATH', dirname($_SERVER['SCRIPT_NAME']) . '/');
+define('BASEPATH', rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/');
 define('BASEURL', BASEPATH . 'index.php/');
 try {
 	session_start();
