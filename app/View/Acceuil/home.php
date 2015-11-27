@@ -18,7 +18,7 @@ var_dump($session->getUser()['mail']);
 	    </div>
 	    <div class="form-group">
 	    	Estimote Type :
-	        <select>
+	        <select name="type">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
@@ -36,11 +36,34 @@ var_dump($session->getUser()['mail']);
     </fieldset>
 </form>
 
-
 <script>
+/*var box = 0;
+$("#3").click(function(){
+	if (box != 3) {*/
+		CKEDITOR.replace('content');
+		console.log(CKEDITOR.instances['editor']);
 
-	CKEDITOR.replace('content');
-	console.log(CKEDITOR.instances['editor']);
+// 		box = 3
+// 	} else {
+// 		CKEDITOR.instances.editor.destroy();
+// 		box = 0
+// 	}
+// });
+// $("#2").click(function(){
+// 	if (box != 2)
+// 		box = 2
+// 	else
+// 		box = 0
+// });
+// $("#1").click(function(){
+// 	if (box != 1)
+// 		box = 1
+// 	else
+// 		box = 0
+// });
+// $("#create").click(function(){
+// 	$("#select").attr("value", box)
+// });
 </script>
 <!--scripts loaded here-->
     

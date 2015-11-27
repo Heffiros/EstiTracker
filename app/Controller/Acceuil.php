@@ -12,13 +12,12 @@ class Acceuil extends Base
 	public function homeAction()
 	{
 		$form = new Form\RegisterEstimote($_POST, array('db' => $this->db));
-		
 		if ($this->method == 'POST' && $form->isValid()) {
             $estimote = new Model\Estimote($form->getValues());
-            $estimote['created'] = time();
+            $estimote['created'] = date("Y-m-d");
             $estimote['user_id'] = $this->session->getUser()->getPk();
             $estimote->save();
-            $this->redirect('');
+            $this->redirect('backoffice');
         }
 
 		return array('form' => $form);
