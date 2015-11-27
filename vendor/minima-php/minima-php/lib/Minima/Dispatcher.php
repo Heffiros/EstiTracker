@@ -45,10 +45,13 @@ class Dispatcher
 						$template_params = array();
 					}
 					$renderer = new TemplateRenderer($ctrl, $action);
-					$renderer->renderWithLayout(array_merge(
-						$this->variables,
-						$template_params ?: array()
-					));
+					echo $ctrl;
+					echo $action;
+					if($ctrl == "Stat" && $action == "allBystantders") {
+  						echo $renderer->render($params);
+  					}
+					else
+  						$renderer->renderWithLayout($params);
 					return;
 				} catch (Controller\Exception\Base $e) {
 					break;
