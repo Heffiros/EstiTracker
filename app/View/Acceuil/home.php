@@ -51,12 +51,13 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 <h2 class="text-center"><br>Ajout d'un estimote</h2>
             </div>
-            <div class="modal-body row">
+            <div class="modal-body row" style="text-align: center;">
                <!--  <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6> -->
                 <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action='' method='POST'>
                 <fieldset>
                 	<div class="form-group">
-	        <?php echo $form->input('beacon_ref','reference_estimote','text'); ?><br/>
+                		<input type="text" name="beacon_ref" id="beacon_ref" class="form-control" placeholder="reference_estimote" style="width: 80%; margin-left: auto; margin-right: auto;">
+	        <?php //echo $form->input('beacon_ref','reference_estimote','text'); ?>
 	    </div>
 	    <div class="form-group">
 	    	Estimote Type :
