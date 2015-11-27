@@ -11,7 +11,7 @@
     <nav class="navbar navbar-trans navbar-fixed-top" role="navigation" style="position:relative; margin: 0;">
       <div class="container">
 	<div class="navbar-header">
-	  <a class="navbar-brand text-danger" href="" style="color: #D6D325;">EstiTracker</a>
+	  <a class="navbar-brand text-danger" href="/" style="color: #A6E4CF;">EstiTracker</a>
 	</div>
 	<div class="navbar-collapse collapse" id="navbar-collapsible">
 	</div>
