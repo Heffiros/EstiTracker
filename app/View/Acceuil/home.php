@@ -1,12 +1,3 @@
-<?php
-var_dump($session->getUser()->getPk());
-
-echo "<br >";
-echo "<br >";
-
-var_dump($session->getUser()['mail']);
-
-?>
 <link rel="stylesheet" type="text/css" href="<?php echo BASEPATH ?>app/Stylesheet/home.css" />
 <script type="text/javascript" language="javascript" src="<?php echo BASEPATH ?>/ckeditor/ckeditor.js"></script>
 <!-- MODAL CONNETION-->
@@ -14,7 +5,7 @@ var_dump($session->getUser()['mail']);
 <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action="" method="post" >
     <fieldset>
 		<div class="form-group">
-	        <?php echo $form->input('beacon_ref','reference_estimote','text') ?><br/>
+	        <?php echo $form->input('beacon_ref','reference_estimote','text'); ?><br/>
 	    </div>
 	    <div class="form-group">
 	    	Estimote Type :
