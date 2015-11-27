@@ -45,8 +45,10 @@ class Dispatcher
 						$template_params = array();
 					}
 					$renderer = new TemplateRenderer($ctrl, $action);
-					echo $ctrl;
-					echo $action;
+					$params = array_merge(
+						$this->variables,
+						$template_params ?: array()
+					);
 					if($ctrl == "Stat" && $action == "allBystantders") {
   						echo $renderer->render($params);
   					}

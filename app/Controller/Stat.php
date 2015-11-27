@@ -13,6 +13,7 @@ class Stat extends Base
 
 	public function allBystantders()
 	{
-		echo "string";
+		$moyenneByStanders = $this->db->query("SELECT COUNT(*) FROM esti_stat GROUP BY date_pass");
+		return array('moyenneByStanders' => $moyenneByStanders);
 	}
 }

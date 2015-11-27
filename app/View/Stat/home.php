@@ -16,7 +16,8 @@ $(".target" ).change(function() {
 var type = $(".target").val();
 
 if (type != 0) {
-	var stat_url = '/stat_chart_' + String(type);
+	var base = <?php echo BASEPATH ?>;
+	var stat_url = base + 'index.php/stat/stat_chart_' + String(type);
 	$.ajax({
 				async: true,
 				type: 'POST',
@@ -25,7 +26,6 @@ if (type != 0) {
 					$("#contenu_dyna").html(data);
 				}
 			});
-	
 }
 
 });

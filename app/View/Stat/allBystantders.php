@@ -1,1 +1,1 @@
-<?php echo "ezorjzeoijzfoizjfoizejfzofjzeofjezofjeoifjzeoifjzefoizejfoiezfjzeoifjzeofjzeoifjzefoizj" ?>
+<?php echo $moyenneByStanders ?>
