@@ -14,5 +14,6 @@ class RegisterEstimote extends Base {
         $this->fields[] = 'user_id'; // hack
         $vals = array('beacon_ref' => $this->values['beacon_ref'], 'user_id' => $this->values['user_id'],
          'content' => $this->values['content'], 'type' => $this->values['type'], 'created' => $this->values['created']);
+
     }
 }
