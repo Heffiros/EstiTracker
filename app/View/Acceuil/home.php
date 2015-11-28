@@ -3,34 +3,48 @@
 <!-- Basepath not working in that peculiar case and i do not want to know why anymore -->
 <!-- MODAL CONNETION-->
 
-<!-- <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action="" method="post" >
-    <fieldset>
-		<div class="form-group">
-	        <?php //echo $form->input('beacon_ref','reference_estimote','text'); ?><br/>
-	    </div>
-	    <div class="form-group">
-	    	Estimote Type :
-	        <select name="type">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-			</select>
-			<br/>
-	    </div>
-	    <div class="form-group">
-	        <?php //echo $form->input('content', 'estimote_content_ckeditor', 'text') ?>
-    	    <textarea id="editor" name="content"></textarea>
-           	<br/>
-        </div>
-    	<div class="form-group">
-        	<input type="submit"  class="btn btn-primary"/>
-        </div>
-    </fieldset>
-</form> -->
 
 <div class="calque">
 
 </div>
+
+<script type="text/javascript" language="javascript" src="http://estitracker.esy.es/datatable/media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="http://estitracker.esy.es/datatable/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" class="init">
+	$(document).ready(function() {
+    	$('#enregistrement').DataTable();
+	} );
+</script>
+<table id="enregistrement" class="display" cellspacing="0" width="100%">
+	<thead>
+      	<tr>
+      		<th>id Estimote</th>
+      		<th>Nom de l'Estimote</th>
+      		<th>Type de l'Estimote</th>
+      		<th>Contenu html de l'Estimote</th>
+      		<th> Date de création de l'Estimote </th>
+      	</tr>
+    </thead>
+    <tbody>
+		<?php
+			$i = 0;
+			while(isset($query[$i])){
+				$row = $query[$i];
+				$i++;
+				echo "<tr>";
+				echo "<td> " .$row['id']. " </td><br>";
+				echo "<td>  " .$row['beacon_ref']. " </td><br>";
+				echo "<td> " .$row['type']. " </td><br>";
+				$small = substr($row['content'], 0, 100);
+				if($row['type'] == 3)
+					echo "<td>  " .$small. " </td><br>";
+				echo "<td>" .$row['created']. " </td><br>";
+				echo "</tr><br>";
+			}
+		?>
+
+	</tbody>
+</table>
 
 <section class="container-fluid" id="section1">
     <div class="v-center">

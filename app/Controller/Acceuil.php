@@ -19,7 +19,9 @@ class Acceuil extends Base
             $estimote->save();
             $this->redirect('backoffice');
         }
-
-		return array('form' => $form);
+        $val = $this->session->getUser()->getPk();
+		$stmt = $this->db->query("SELECT * FROM `esti_beacon` WHERE `user_id` =  $val");
+		$lama = $stmt->fetchAll();
+		return array('form' => $form, 'query' => $lama);
 	}
 }
