@@ -1,5 +1,6 @@
 <script type="text/javascript" language="javascript" src="http://estitracker.esy.es/ckeditor/ckeditor.js"></script>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
 <!-- Basepath not working in that peculiar case and i do not want to know why anymore -->
 <!-- MODAL CONNETION-->
 
