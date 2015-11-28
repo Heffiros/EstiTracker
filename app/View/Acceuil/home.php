@@ -1,55 +1,39 @@
-<link rel="stylesheet" type="text/css" href="<?php echo BASEPATH ?>app/Stylesheet/home.css" />
 <script type="text/javascript" language="javascript" src="http://estitracker.esy.es/ckeditor/ckeditor.js"></script>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <!-- Basepath not working in that peculiar case and i do not want to know why anymore -->
 <!-- MODAL CONNETION-->
 
 
-<div class="calque">
-
-</div>
-
-<script type="text/javascript" language="javascript" src="http://estitracker.esy.es/datatable/media/js/jquery.js"></script>
-<script type="text/javascript" language="javascript" src="http://estitracker.esy.es/datatable/media/js/jquery.dataTables.js"></script>
-<script type="text/javascript" language="javascript" class="init">
-	$(document).ready(function() {
-    	$('#enregistrement').DataTable();
-	} );
-</script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 <table id="enregistrement" class="display" cellspacing="0" width="100%">
-	<thead>
-      	<tr>
-      		<th>id Estimote</th>
-      		<th>Nom de l'Estimote</th>
-      		<th>Type de l'Estimote</th>
-      		<th>Contenu html de l'Estimote</th>
-      		<th> Date de création de l'Estimote </th>
-      	</tr>
+    <thead>
+        <tr>
+            <th>id Estimote</th>
+            <th>Nom de l'Estimote</th>
+            <th>Type de l'Estimote</th>
+            <th>Contenu html de l'Estimote</th>
+            <th>Date de création de l'Estimote </th>
+        </tr>
     </thead>
     <tbody>
-		<?php
-			$i = 0;
-			while(isset($query[$i])){
-				$row = $query[$i];
-				$i++;
-				echo "<tr>";
-				echo "<td> " .$row['id']. " </td><br>";
-				echo "<td>  " .$row['beacon_ref']. " </td><br>";
-				echo "<td> " .$row['type']. " </td><br>";
-				$small = substr($row['content'], 0, 100);
-				if($row['type'] == 3)
-					echo "<td>  " .$small. " </td><br>";
-				echo "<td>" .$row['created']. " </td><br>";
-				echo "</tr><br>";
-			}
-		?>
+        <?php
+            foreach ($query as $value) {
+                echo "<tr>";
+                    echo "<th>" . $value['id'] . "</th>"; 
+                    echo "<th>" . $value['beacon_ref'] . "</th>"; 
+                    echo "<th>" . $value['type'] . "</th>"; 
+                    
+                    echo "<th>" . substr($value['content'], 0 ,100) . "</th>"; 
+                    echo "<th>" . $value['created'] . "</th>"; 
+                echo "</tr>";
+            }
+        ?>
 
-	</tbody>
+    </tbody>
 </table>
 
 <section class="container-fluid" id="section1">
     <div class="v-center">
-        <h1 class="text-center">EstiTracker</h1>
-        <h2 class="text-center lato animate slideInDown ">Ajout d'un estimote</h2>
         <p class="text-center">
             <br>
             <a href="#" style="width:212px;" class="btn btn-default btn-lg btn-huge lato" data-toggle="modal" data-target="#myModal1">Cliquez pour ajouter !</a>
@@ -69,26 +53,26 @@
                <!--  <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6> -->
                 <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action='' method='POST'>
                 <fieldset>
-                	<div class="form-group">
-                		<input type="text" name="beacon_ref" id="beacon_ref" class="form-control" placeholder="reference_estimote" style="width: 80%; margin-left: auto; margin-right: auto;">
-	        <?php //echo $form->input('beacon_ref','reference_estimote','text'); ?>
-	    </div>
-	    <div class="form-group">
-	    	Estimote Type :
-	        <select name="type" class="target">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-			</select>
-			<br/>
-	    </div>
-	    <div class="form-group">
-	        <?php //echo $form->input('content', 'estimote_content_ckeditor', 'text') ?>
-    	    <textarea id="editor" name="content" style="display:none;!important visibility :hidden;!important"></textarea>
-           	<br/>
+                    <div class="form-group">
+                        <input type="text" name="beacon_ref" id="beacon_ref" class="form-control" placeholder="reference_estimote" style="width: 80%; margin-left: auto; margin-right: auto;">
+            <?php //echo $form->input('beacon_ref','reference_estimote','text'); ?>
         </div>
-    	<div class="form-group">
-        	<input type="submit"  class="btn btn-primary"/>
+        <div class="form-group">
+            Estimote Type :
+            <select name="type" class="target">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <br/>
+        </div>
+        <div class="form-group">
+            <?php //echo $form->input('content', 'estimote_content_ckeditor', 'text') ?>
+            <textarea id="editor" name="content" style="display:none;!important visibility :hidden;!important"></textarea>
+            <br/>
+        </div>
+        <div class="form-group">
+            <input type="submit"  class="btn btn-primary"/>
         </div>
                 </fieldset>
                 </form>
@@ -97,22 +81,25 @@
         </div>
     </div>
 </div>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
-	$(".target" ).change(function() {
-		var type = $(".target").val();
-		console.log(type);
-		if (type == 3) {
-			CKEDITOR.replace('content');		
-		}
-		else {
-			if (CKEDITOR.instances)
-				CKEDITOR.instances.editor.destroy();
-		}
-	});
+    $(".target" ).change(function() {
+        var type = $(".target").val();
+        console.log(type);
+        if (type == 3) {
+            CKEDITOR.replace('content');        
+        }
+        else {
+            if (CKEDITOR.instances)
+                CKEDITOR.instances.editor.destroy();
+        }
+    });
 </script>
 <!--scripts loaded here-->
+<script type="text/javascript" language="javascript" class="init">
+	$(document).ready(function() {
+    	$('#enregistrement').DataTable();
+	} );
+</script>
     
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
