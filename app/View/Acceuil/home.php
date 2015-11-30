@@ -59,6 +59,10 @@
                         <input type="text" name="beacon_ref" id="beacon_ref" class="form-control" placeholder="reference_estimote" style="width: 80%; margin-left: auto; margin-right: auto;">
             <?php //echo $form->input('beacon_ref','reference_estimote','text'); ?>
         </div>
+       <div class="form-group">
+            <input type="text" name="name" id="name" class="form-control" placeholder="nom" style="width: 80%; margin-left: auto; margin-right: auto;">
+            <br/>
+        </div>
         <div class="form-group">
             Estimote Type :
             <select name="type" class="target">
