@@ -6,7 +6,7 @@ class Estimote extends Base
 {
 	static protected $table = 'esti_beacon';
 	static protected $pk = 'id';
-	static protected $fields = array('beacon_ref','user_id', 'content','type', 'created');
+	static protected $fields = array('beacon_ref', 'name' ,'user_id', 'content','type', 'created');
     
     public function save()
     {
