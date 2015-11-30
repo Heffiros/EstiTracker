@@ -51,7 +51,6 @@
             <th>Nom de l'Estimote</th>
             <th>Référence Beacon</th>
             <th>Type de l'Estimote</th>
-            <th>Contenu html de l'Estimote</th>
             <th>Date de création de l'Estimote </th>
             <th>Actions</th>
         </tr>
@@ -65,7 +64,6 @@
                     echo "<th>" . $value['name'] . "</th>"; 
                     echo "<th>" . $value['beacon_ref'] . "</th>"; 
                     echo "<th>" . $value['type'] . "</th>"; 
-                    echo "<th>" . substr($value['content'], 0 ,100) . "</th>"; 
                     echo "<th>" . $value['created'] . "</th>"; 
                     echo "<th> <img src='".BASEPATH."app/Media/croix.png' onclick='delete_beacon($id)'></img><img src='".BASEPATH."app/Media/stat.png' onclick='go_stat($id)'></img></th>"; 
                 echo "</tr>";
@@ -156,7 +154,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
 
-<script type="text/javascript">
+<script>
 function delete_beacon(id)
 {
     var base = "<?php echo BASEPATH ?>";

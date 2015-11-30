@@ -27,19 +27,17 @@ class Stat extends Base
 					$return .= "[$new_js_date".$row['nb']."],";
 		}
 
-		$averageTimeSpent = $this->db->query("SELECT * FROM esti_time WHERE beacon_ref = '$esti_ref' GROUP BY beacon_ref");
+		$averageTimeSpent = $this->db->query("SELECT AVG(time) as average, date_pass FROM esti_time WHERE beacon_ref = '$esti_ref' GROUP BY date_pass");
 		$averageTimeSpent = $averageTimeSpent->fetchAll();
-		$i = 0;
-		$averageCalculated = 0;
-		foreach ($averageTimeSpent as $row) {
-					$i++;
-					$averageCalculated = $averageCalculated + $row;
+		$return2 =  "";
+		
+		foreach ($averageTimeSpent as $row2) {
+			$day = explode('-' , $row2["date_pass"]);
+			$new_js_date = "new Date(".$day[0].",".$day[1].",".$day[2]."),";
+			$return2 .= "[$new_js_date".$row2['average'].", '#b87333'],";
 		}
-		if ($i != 0) {
-			$averageCalculated = $averageCalculated / $i;
-		}
-
-		return array('return' => $return, 'esti_ref' => $esti_ref,'average_time_spent' => $averageCalculated);
+		echo $return2;
+		return array('return' => $return, 'esti_ref' => $esti_ref, 'return2' => $return2);
 	}
 
 	public function deleteBeaconAction()

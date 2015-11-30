@@ -70,10 +70,11 @@ class Api extends Base
 	//Méthode qui enregistre le temps de présences de la personne
 	public function addTimeConnexionApiAction()
 	{
-		$vals = array('beacon_ref' => $_GET['beacon_key'], 'client_id' => $_GET['idUser'], 'time' => $_GET['timestamp']);
+		$vals = array('beacon_ref' => $_GET['beacon_key'], 'client_id' => $_GET['idUser'], 'time' => $_GET['time'],  'date_pass' => date('Y-m-d'));
 		$userTimePass = new Model\TimePass($vals);
 		$userTimePass->save();
-		exit(json_encode("OK"));
+		$return["success"] = true;
+		exit(json_encode($return));
 	}
 
 	public function getInfoApiAction()

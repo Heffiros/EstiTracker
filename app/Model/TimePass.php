@@ -7,7 +7,7 @@ class TimePass extends Base
 {
 	static protected $table = 'esti_time';
 	static protected $pk = 'id';
-	static protected $fields = array('client_id', 'beacon_ref', 'time');
+	static protected $fields = array('client_id', 'beacon_ref', 'time', 'date_pass');
 
 
 	public function save()
