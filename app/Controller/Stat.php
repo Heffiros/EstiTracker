@@ -17,7 +17,7 @@ class Stat extends Base
 		$vals = array('id' => $_GET['id']);
 
 		$estimote = Model\Estimote::find($vals);
-		$esti_ref =$estimote->getName();
+		$esti_ref =$estimote->getRef();
 		$moyenneByStanders = $this->db->query("SELECT COUNT(*) as nb, beacon_ref, date_pass FROM esti_stat WHERE beacon_ref = '$esti_ref' GROUP BY date_pass");
 		$moyenneByStanders = $moyenneByStanders->fetchAll();
 		$return = "";
