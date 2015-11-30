@@ -26,6 +26,10 @@ class Stat extends Base
 					$new_js_date = "new Date(".$day[0].",".$day[1].",".$day[2]."),";
 					$return .= "[$new_js_date".$row['nb']."],";
 		}
+
+		$averageTimeSpent = $this->db->query("SELECT * FROM est_time WHERE beacon_ref = '$esti_ref' GROUP BY beacon_ref");
+		$averageTimeSpent = $averageTimeSpent->fetchAll();
+
 		return array('return' => $return, 'esti_ref' => $esti_ref);
 	}
 }
