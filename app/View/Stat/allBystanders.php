@@ -1,5 +1,7 @@
  <div id="linechart_material" style="width: 900px; height: 500px"></div>
-
+<?php
+var_dump($average_time_spent);
+?>
 <script type="text/javascript">
 	  google.load('visualization', '1.1', {packages: ['line']});
     google.setOnLoadCallback(drawChart);
