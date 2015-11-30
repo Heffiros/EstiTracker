@@ -115,7 +115,7 @@ function delete_beacon(id)
 
 function go_stat(id)
 {
-    var base = <?php echo BASEPATH ?>;
+    var base = "<?php echo BASEPATH ?>";
     var stat_url = base + 'index.php/stat/stat_chart/?id='+id;
     window.location.replace(stat_url);
 }
