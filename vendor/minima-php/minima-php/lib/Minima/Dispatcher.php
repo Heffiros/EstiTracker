@@ -49,11 +49,7 @@ class Dispatcher
 						$this->variables,
 						$template_params ?: array()
 					);
-					if($ctrl == "Stat" && $action == "allBystanders") {
-  						echo $renderer->render($params);
-  					}
-					else
-  						$renderer->renderWithLayout($params);
+  					$renderer->renderWithLayout($params);
 					return;
 				} catch (Controller\Exception\Base $e) {
 					break;

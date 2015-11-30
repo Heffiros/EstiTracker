@@ -22,4 +22,9 @@ class Estimote extends Base
     {
     	return $this->values['content'];
     }
+
+    public function getName()
+    {
+        return $this->values['beacon_ref'];
+    }
 }

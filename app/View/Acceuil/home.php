@@ -14,22 +14,23 @@
             <th>Type de l'Estimote</th>
             <th>Contenu html de l'Estimote</th>
             <th>Date de création de l'Estimote </th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <?php
             foreach ($query as $value) {
+                $id = $value['id'];
                 echo "<tr>";
                     echo "<th>" . $value['id'] . "</th>"; 
                     echo "<th>" . $value['beacon_ref'] . "</th>"; 
                     echo "<th>" . $value['type'] . "</th>"; 
-                    
                     echo "<th>" . substr($value['content'], 0 ,100) . "</th>"; 
                     echo "<th>" . $value['created'] . "</th>"; 
+                    echo "<th> <img src='".BASEPATH."app/Media/croix.png' onclick='delete_beacon($id)'></img><img src='".BASEPATH."app/Media/stat.png' onclick='go_stat($id)'></img></th>"; 
                 echo "</tr>";
             }
         ?>
-
     </tbody>
 </table>
 
@@ -104,3 +105,19 @@
     
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
+
+<script type="text/javascript">
+function delete_beacon(id)
+{
+    alert(id);
+}
+
+
+function go_stat(id)
+{
+    var base = <?php echo BASEPATH ?>;
+    var stat_url = base + 'index.php/stat/stat_chart/?id='+id;
+    window.location.replace(stat_url);
+}
+
+</script>

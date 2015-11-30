@@ -11,17 +11,21 @@ class Stat extends Base
 		
 	}
 
-	public function allBystandersAction()
+	public function allBystandersAction($params)
 	{
-		$moyenneByStanders = $this->db->query("SELECT COUNT(*) as nb, beacon_ref FROM esti_stat WHERE date_pass = DATE(NOW()) GROUP BY beacon_ref");
+
+		$vals = array('id' => $_GET['id']);
+
+		$estimote = Model\Estimote::find($vals);
+		$esti_ref =$estimote->getName();
+		$moyenneByStanders = $this->db->query("SELECT COUNT(*) as nb, beacon_ref, date_pass FROM esti_stat WHERE beacon_ref = '$esti_ref' GROUP BY date_pass");
 		$moyenneByStanders = $moyenneByStanders->fetchAll();
-		
 		$return = "";
 		foreach ($moyenneByStanders as $row) {
-					$return .= "['" . $row["beacon_ref"] . "','" . $row["nb"]. "'],";
+					$day = explode('-' , $row["date_pass"]);
+					$new_js_date = "new Date(".$day[0].",".$day[1].",".$day[2]."),";
+					$return .= "[$new_js_date".$row['nb']."],";
 		}
-		//$return[strlen($return) - 1] = "";
-		echo $return;
-		return array('return' => $return);
+		return array('return' => $return, 'esti_ref' => $esti_ref);
 	}
 }
