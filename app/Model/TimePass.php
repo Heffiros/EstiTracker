@@ -5,7 +5,7 @@ use PotterORM\Base;
 
 class TimePass extends Base
 {
-	static protected $table = 'esti_stat';
+	static protected $table = 'esti_time';
 	static protected $pk = 'id';
 	static protected $fields = array('client_id', 'beacon_ref', 'time');
 
