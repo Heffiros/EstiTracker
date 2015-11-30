@@ -27,7 +27,7 @@ class Stat extends Base
 					$return .= "[$new_js_date".$row['nb']."],";
 		}
 
-		$averageTimeSpent = $this->db->query("SELECT * FROM est_time WHERE beacon_ref = '$esti_ref' GROUP BY beacon_ref");
+		$averageTimeSpent = $this->db->query("SELECT * FROM esti_time WHERE beacon_ref = '$esti_ref' GROUP BY beacon_ref");
 		$averageTimeSpent = $averageTimeSpent->fetchAll();
 
 		return array('return' => $return, 'esti_ref' => $esti_ref);
