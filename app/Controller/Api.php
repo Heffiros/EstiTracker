@@ -41,9 +41,7 @@ class Api extends Base
 	//Api qui vérifier quel comportemment doit avoir le beacon
 	public function checkEstiTypeApiAction()
 	{
-		var_dump($_GET);
 		$vals = array('beacon_ref' =>  $_GET['beacon_key']);
-		echo $_GET['beacon_key'];
 		$estimote = Model\Estimote::find($vals);
 		$type = $estimote->getType();
 		$return = array("state" => "");

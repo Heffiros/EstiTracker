@@ -1,4 +1,4 @@
- <div id="linechart_material" style="width: 900px; height: 500px"></div>
+<div id="linechart_material" style="width: 900px; height: 500px; float: left; margin-top : 20px;"></div><br>
 <?php
 var_dump($average_time_spent);
 ?>
@@ -19,7 +19,7 @@ var_dump($average_time_spent);
         chart: {
           title: 'Nombre de passant',
         },
-        width: 900,
+        width: 600,
         height: 500
       };
 
@@ -28,3 +28,17 @@ var_dump($average_time_spent);
       chart.draw(data, options);
     }
    </script>
+
+<div>
+  <a class="form-control" href="<?php echo BASEPATH?>index.php/backoffice" style="margin-left:auto; margin-right: auto; text-align: center; width: 30%; margin-top: 20px;">
+    Retourner à la sélection des estimotes
+  </a>
+</div>
+
+<style type="text/css">
+  a:hover {
+    background-color: #3B3A74;
+    color: white;
+    text-decoration: none;
+  }
+</style>

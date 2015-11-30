@@ -6,7 +6,45 @@
 
 
 <script type="text/javascript" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-<table id="enregistrement" class="display" cellspacing="0" width="100%">
+
+
+
+<style type="text/css">
+    #enregistrement_filter {
+      margin-right:40%;
+      margin-bottom: 10px;
+    }
+    #enregistrement_paginate {
+        display: none;
+    }
+    .dataTables_length {
+    display: none;
+  }
+  #menu {
+    display: none;
+  }
+  #enregistrement {
+    border: solid;
+    border-color: #3B3A74;
+    border-width: 5px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px #888888;
+  }
+  th {
+    text-align: center;
+  }
+  h1 {
+    text-align: center;
+  }
+  thead {
+    background-color: #3B3A74;
+    color: white;
+  }
+</style>
+
+<h1>Liste des estimotes</h1><br>
+
+<table id="enregistrement" class="display" cellspacing="0" width="90%">
     <thead>
         <tr>
             <th>id Estimote</th>
@@ -104,9 +142,15 @@
 </script>
 <!--scripts loaded here-->
 <script type="text/javascript" language="javascript" class="init">
-	$(document).ready(function() {
-    	$('#enregistrement').DataTable();
-	} );
+	$(document).ready(function(){
+    $('#enregistrement').DataTable({
+        "ordering": false,
+        "info":     false,
+      "language": {
+        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+      }
+    });
+});
 </script>
     
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
