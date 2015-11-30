@@ -115,7 +115,9 @@
 <script type="text/javascript">
 function delete_beacon(id)
 {
-    alert(id);
+    var base = <?php echo BASEPATH ?>;
+    var stat_url = base + 'index.php/stat/delete_stat?id='+id;
+    window.location.replace(stat_url);
 }
 
 

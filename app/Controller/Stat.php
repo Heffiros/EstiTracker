@@ -28,4 +28,11 @@ class Stat extends Base
 		}
 		return array('return' => $return, 'esti_ref' => $esti_ref);
 	}
+
+	public function deleteBeaconAction()
+	{
+		$id = $_GET['id'];
+		$moyenneByStanders = $this->db->query("DELETE FROM esti_beacon WHERE id = $id");
+		$this->redirect('backoffice');
+	}
 }
