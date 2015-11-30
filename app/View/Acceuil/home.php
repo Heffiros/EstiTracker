@@ -11,6 +11,7 @@
         <tr>
             <th>id Estimote</th>
             <th>Nom de l'Estimote</th>
+            <th>Référence Beacon</th>
             <th>Type de l'Estimote</th>
             <th>Contenu html de l'Estimote</th>
             <th>Date de création de l'Estimote </th>
@@ -23,6 +24,7 @@
                 $id = $value['id'];
                 echo "<tr>";
                     echo "<th>" . $value['id'] . "</th>"; 
+                    echo "<th>" . $value['name'] . "</th>"; 
                     echo "<th>" . $value['beacon_ref'] . "</th>"; 
                     echo "<th>" . $value['type'] . "</th>"; 
                     echo "<th>" . substr($value['content'], 0 ,100) . "</th>"; 
@@ -113,7 +115,9 @@
 <script type="text/javascript">
 function delete_beacon(id)
 {
-    alert(id);
+    var base = <?php echo BASEPATH ?>;
+    var stat_url = base + 'index.php/stat/delete_stat?id='+id;
+    window.location.replace(stat_url);
 }
 
 

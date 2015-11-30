@@ -77,5 +77,15 @@ class Api extends Base
 		$userTimePass->save();
 		exit(json_encode("OK"));
 	}
+
+	public function getInfoApiAction()
+	{
+		$list = Model\Estimote::findAll();
+		$return = array();
+		foreach ($list as $row) {
+			$return[$row["beacon_ref"]] = $row["name"];
+		}
+		exit(json_encode($return));
+	}
 }
 
