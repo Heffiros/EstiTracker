@@ -59,13 +59,14 @@
         <?php
             foreach ($query as $value) {
                 $id = $value['id'];
+                $type = $value['type'];
                 echo "<tr>";
                     echo "<th>" . $value['id'] . "</th>"; 
                     echo "<th>" . $value['name'] . "</th>"; 
                     echo "<th>" . $value['beacon_ref'] . "</th>"; 
                     echo "<th>" . $value['type'] . "</th>"; 
                     echo "<th>" . $value['created'] . "</th>"; 
-                    echo "<th> <img src='".BASEPATH."app/Media/croix.png' onclick='delete_beacon($id)'></img><img src='".BASEPATH."app/Media/stat.png' onclick='go_stat($id)'></img></th>"; 
+                    echo "<th> <img src='".BASEPATH."app/Media/croix.png' onclick='delete_beacon($id)'></img><img src='".BASEPATH."app/Media/stat.png' onclick='go_stat($id, $type)'></img></th>"; 
                 echo "</tr>";
             }
         ?>
@@ -163,10 +164,10 @@ function delete_beacon(id)
 }
 
 
-function go_stat(id)
+function go_stat(id, type)
 {
     var base = "<?php echo BASEPATH ?>";
-    var stat_url = base + 'index.php/stat/stat_chart/?id='+id;
+    var stat_url = base + 'index.php/stat/stat_chart_' + type + '/?id='+id;
     window.location.replace(stat_url);
 }
 

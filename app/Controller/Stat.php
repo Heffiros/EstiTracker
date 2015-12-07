@@ -4,6 +4,11 @@ use Minima\Controller\Base;
 use \Model;
 use \Form;
 
+
+/**
+* Ce controlleur gère toute la partie calcule de stat et création des google chart
+*/
+
 class Stat extends Base
 {
 	public function homeAction()
@@ -27,6 +32,16 @@ class Stat extends Base
 					$return .= "[$new_js_date".$row['nb']."],";
 		}
 
+		
+		return array('return' => $return, 'esti_ref' => $esti_ref);
+	}
+
+	public function averageTimeAction()
+	{
+		$vals = array('id' => $_GET['id']);
+
+		$estimote = Model\Estimote::find($vals);
+		$esti_ref =$estimote->getRef();
 		$averageTimeSpent = $this->db->query("SELECT AVG(time) as average, date_pass FROM esti_time WHERE beacon_ref = '$esti_ref' GROUP BY date_pass");
 		$averageTimeSpent = $averageTimeSpent->fetchAll();
 		$return2 =  "";
@@ -34,12 +49,11 @@ class Stat extends Base
 		foreach ($averageTimeSpent as $row2) {
 			$day = explode('-' , $row2["date_pass"]);
 			$new_js_date = "new Date(".$day[0].",".$day[1].",".$day[2]."),";
-			$return2 .= "[$new_js_date".$row2['average'].", '#b87333'],";
+			$return2 .= "[$new_js_date".$row2['average'].", '#0080FF'],";
 		}
-		echo $return2;
-		return array('return' => $return, 'esti_ref' => $esti_ref, 'return2' => $return2);
-	}
 
+		return array('return2' => $return2);
+	}
 	public function deleteBeaconAction()
 	{
 		$id = $_GET['id'];

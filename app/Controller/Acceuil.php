@@ -4,9 +4,13 @@ use Minima\Controller\Base;
 use \Model;
 use \Form;
 
-//Ce controleur sera celui qui permetra de gérer la page d'acceuil après la connexion.
-//Il contiendra la DataTable avec la liste de tous les Beacon enregistré
-//Il contiendra le formulaire pour faire les nouveaux enregistrement
+/**
+* Ce controlleur gère la page après la connexion
+* Le client peut voir grâce au datatable les beacon qu'il a programmé
+* Il peut en enregistrer de nouveaux ou encore les supprimer.
+* TODO :
+* - Faire en sorte qu'il puisse modifier son beacon
+*/
 class Acceuil extends Base
 {
 	public function homeAction()
