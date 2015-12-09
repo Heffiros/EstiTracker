@@ -10,5 +10,7 @@ return array(
 	'api/list' => 'Api#getInfoApi',
 	'stat/select' => 'Stat#home',
 	'stat/delete_stat' => 'Stat#deleteBeacon',
-	'stat/stat_chart_1/:id' => 'Stat#allBystanders'
+	'stat/stat_chart_1/:id' => 'Stat#allBystanders',
+	'email' => 'Email#home',
+	'email/send' => 'Email#send'
 );

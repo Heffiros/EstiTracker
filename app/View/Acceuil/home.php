@@ -129,7 +129,6 @@
 <script>
     $(".target" ).change(function() {
         var type = $(".target").val();
-        console.log(type);
         if (type == 3) {
             CKEDITOR.replace('content');        
         }

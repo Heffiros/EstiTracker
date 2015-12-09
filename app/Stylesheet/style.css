@@ -44,3 +44,17 @@
 .row{
 	margin : 0;
 }
+
+#number_participant {
+	width: 25% !important;
+}
+
+#submit_mail {
+    width: 25%;
+}
+
+#text_ck {
+    height: 50%;
+    width: 25%;
+}
+
