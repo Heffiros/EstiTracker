@@ -25,7 +25,11 @@ class Email extends Base
 	{
 		$array = $this->calculateTarget($_GET['nb_gagnant']);
 		foreach ($array as $value) {
-			mail($value['mail'], $_GET['objet'], $_GET['content']);
+			$headers  = 'MIME-Version: 1.0' . "\r\n";
+		    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+     // En-têtes additionnels
+			mail($value['mail'], $_GET['objet'], $_GET['content'], $headers);
 		}
 	}
 
