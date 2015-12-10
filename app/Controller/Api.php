@@ -64,7 +64,7 @@ class Api extends Base
 		$vals = array('beacon_ref' =>  $_GET['beacon_key']);
 		$estimote = Model\Estimote::find($vals);
 		$content = $estimote->getContent();
-		exit($content);
+                return array('content' => $content);
 	}
 
 	//Méthode qui enregistre le temps de présences de la personne
