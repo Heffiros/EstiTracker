@@ -48,7 +48,13 @@ class Fidelite extends Base
  		$total = 0;
  		while ($row = $stmt->fetch()) {
     		$all_achat[] = $row;
+    		$total += $row['prix'];
   		}
+  		$i = count($all_achat);
+  		$all_achat[$i]["mail"] = "Total";
+  		$all_achat[$i]["produit"] = "";
+  		$all_achat[$i]["prix"] = $total;
+
 		return array('all_achat' => $all_achat);
 	}
 
