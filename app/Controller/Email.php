@@ -29,7 +29,7 @@ class Email extends Base
 		    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
                     // En-têtes additionnel	s
-			//$test = mail($value['mail'], $_GET['objet'], $_GET['content'], $headers);
+			$test = mail($value['mail'], $_GET['objet'], $_GET['content'], $headers);
 			$this->db->query("INSERT INTO esti_historique_mail (mail) VALUES ('" . $value['mail'] . "')");
  		}
  		 $this->redirect('backoffice');
