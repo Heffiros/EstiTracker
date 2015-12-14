@@ -52,7 +52,7 @@ class Api extends Base
 		} else if ($type == "2") {
 			$return['state'] = "timestamp";
 		} else if ($type == "3") {
-			$return['state'] = "http://estitracker.esy.es/index.php/api/aff?beacon_key=" . $_GET["beacon_key"];
+			$return['state'] = "http://192.168.126.4/EstiTracker/index.php/api/aff?beacon_key=" . $_GET["beacon_key"];
 		}
 		exit(json_encode($return));
 	}
