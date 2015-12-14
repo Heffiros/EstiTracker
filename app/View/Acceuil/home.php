@@ -150,7 +150,7 @@
 </script>
 <!--scripts loaded here-->
 <script type="text/javascript" language="javascript" class="init">
-	$(document).ready(function(){
+    $(document).ready(function(){
     $('#enregistrement').DataTable({
         "ordering": false,
         "info":     false,

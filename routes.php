@@ -16,5 +16,4 @@ return array(
 	'fidelite' => 'Fidelite#home',
 	'fidele/historique' => 'Fidelite#historiqueAchat',
 	'modif/:id' => 'Acceuil#modif'
-
 );
