@@ -34,6 +34,7 @@ class Fidelite extends Base
 
  	public function historiqueAchatAction()
  	{
+
  		$mail = $_POST["mail"];
  		$sql = 'SELECT *
    		FROM esti_historique_achat
@@ -44,6 +45,7 @@ class Fidelite extends Base
 
  		$stmt->execute();
  		$all_achat = array();
+ 		$total = 0;
  		while ($row = $stmt->fetch()) {
     		$all_achat[] = $row;
   		}
