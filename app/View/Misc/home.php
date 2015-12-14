@@ -1,7 +1,9 @@
 <link rel="stylesheet" type="text/css" href="<?php echo BASEPATH ?>app/Stylesheet/home.css" />
 
 <div class="calque">
+</div>
 
+<div class="slider1" style="background : url(<?php echo BASEPATH?>app/Media/slide1.jpg) fixed no-repeat ; height : 100%;">
 </div>
 
 <section class="container-fluid" id="section1">
