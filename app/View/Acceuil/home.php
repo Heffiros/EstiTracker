@@ -44,6 +44,9 @@
 
 <h1>Liste des estimotes</h1><br>
 
+<a type="submit" href="<?php echo BASEPATH ?>index.php/fidelite" style="width:212px;" class="btn  btn-lg btn-huge lato" >
+    <img src="<?php echo BASEPATH?>app/Media/fidelisation.jpg"></a>
+
 <table id="enregistrement" class="display" cellspacing="0" width="90%">
     <thead>
         <tr>
@@ -73,8 +76,6 @@
                     echo "<th><img src='".BASEPATH."app/Media/croix.png' onclick='delete_beacon($id)'></img>
                                <img src='".BASEPATH."app/Media/stat.png' onclick='go_stat($id, $type)'></img>
                                <img src='".BASEPATH."app/Media/edit.png' onclick='modif_beacon($id)'></img>";
-                    
-                   
                     echo "</th>"; 
                 echo "</tr>";
             }
