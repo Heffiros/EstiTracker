@@ -44,10 +44,10 @@
 
 <h1>Liste des estimotes</h1><br>
 
-<a type="submit" href="<?php echo BASEPATH ?>index.php/fidelite" style="width:212px;" class="btn  btn-lg btn-huge lato" >
-    <img src="<?php echo BASEPATH?>app/Media/fidelisation.jpg"></a>
 
 <table id="enregistrement" class="display" cellspacing="0" width="90%">
+
+
     <thead>
         <tr>
             <th>id Estimote</th>
@@ -59,6 +59,7 @@
         </tr>
     </thead>
     <tbody>
+
         <?php
             foreach ($query as $value) {
                 $id = $value['id'];
@@ -135,8 +136,11 @@
                 </form>
             </div>
         </div>
+
     </div>
 </div>
+        <a type="submit" href="<?php echo BASEPATH ?>index.php/fidelite" style="margin-left : 4%;" class="btn  btn-lg btn-huge lato" >
+        <img src="<?php echo BASEPATH?>app/Media/fidelisation.jpg"></a>
 <script>
     $(".target" ).change(function() {
         var type = $(".target").val();
