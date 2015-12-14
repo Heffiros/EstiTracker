@@ -28,9 +28,11 @@ class Email extends Base
 			$headers  = 'MIME-Version: 1.0' . "\r\n";
 		    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-                    // En-têtes additionnels
-			$test = mail($value['mail'], $_GET['objet'], $_GET['content'], $headers);
+                    // En-têtes additionnel	s
+			//$test = mail($value['mail'], $_GET['objet'], $_GET['content'], $headers);
+			$this->db->query("INSERT INTO esti_historique_mail (mail) VALUES ('" . $value['mail'] . "')");
  		}
+ 		 $this->redirect('backoffice');
 	}
 
 	//Cette méthode calculera la cible

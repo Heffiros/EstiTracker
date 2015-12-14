@@ -86,8 +86,13 @@
     <div class="v-center">
         <p class="text-center">
             <br>
+<<<<<<< HEAD
+            <a href="#" style="width:212px;" class="btn btn-default btn-lg btn-huge lato" data-toggle="modal" data-target="#myModal1">Cliquez pour ajouter !</a>
+            <a type="submit" href="<?php echo BASEPATH ?>index.php/email" style="width:212px;" class="btn btn-success btn-lg btn-huge lato" >Envoyer Mail Promo</a>
+=======
             <a href="#" style="width:212px;" class="btn btn-default btn-lg btn-huge lato"
              data-toggle="modal" data-target="#myModal1">Cliquez pour ajouter !</a>
+>>>>>>> eefd0d8c43ca0126a2cd8228d1f0a73ef6dbe30f
             <br>
         </p>
     </div>
