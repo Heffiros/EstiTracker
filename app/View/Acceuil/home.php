@@ -60,13 +60,22 @@
             foreach ($query as $value) {
                 $id = $value['id'];
                 $type = $value['type'];
+                $beacon_ref = $value['beacon_ref'];
+                $created = $value['created'];
+                $name = $value['name'];
+                $content = $value['content'];
                 echo "<tr>";
-                    echo "<th>" . $value['id'] . "</th>"; 
-                    echo "<th>" . $value['name'] . "</th>"; 
-                    echo "<th>" . $value['beacon_ref'] . "</th>"; 
-                    echo "<th>" . $value['type'] . "</th>"; 
-                    echo "<th>" . $value['created'] . "</th>"; 
-                    echo "<th> <img src='".BASEPATH."app/Media/croix.png' onclick='delete_beacon($id)'></img><img src='".BASEPATH."app/Media/stat.png' onclick='go_stat($id, $type)'></img></th>"; 
+                    echo "<th> $id </th>"; 
+                    echo "<th> $name</th>"; 
+                    echo "<th>$beacon_ref</th>"; 
+                    echo "<th>$type</th>"; 
+                    echo "<th>$created</th>"; 
+                    echo "<th><img src='".BASEPATH."app/Media/croix.png' onclick='delete_beacon($id)'></img>
+                               <img src='".BASEPATH."app/Media/stat.png' onclick='go_stat($id, $type)'></img>
+                               <img src='".BASEPATH."app/Media/edit.png' onclick='modif_beacon($id)'></img>";
+                    
+                   
+                    echo "</th>"; 
                 echo "</tr>";
             }
         ?>
@@ -77,8 +86,13 @@
     <div class="v-center">
         <p class="text-center">
             <br>
+<<<<<<< HEAD
             <a href="#" style="width:212px;" class="btn btn-default btn-lg btn-huge lato" data-toggle="modal" data-target="#myModal1">Cliquez pour ajouter !</a>
             <a type="submit" href="<?php echo BASEPATH ?>index.php/email" style="width:212px;" class="btn btn-success btn-lg btn-huge lato" >Envoyer Mail Promo</a>
+=======
+            <a href="#" style="width:212px;" class="btn btn-default btn-lg btn-huge lato"
+             data-toggle="modal" data-target="#myModal1">Cliquez pour ajouter !</a>
+>>>>>>> eefd0d8c43ca0126a2cd8228d1f0a73ef6dbe30f
             <br>
         </p>
     </div>
@@ -94,36 +108,35 @@
             <div class="modal-body row" style="text-align: center;">
                <!--  <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6> -->
                 <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" action='' method='POST'>
-                <fieldset>
-                    <div class="form-group">
-                        <input type="text" name="beacon_ref" id="beacon_ref" class="form-control" placeholder="reference_estimote" style="width: 80%; margin-left: auto; margin-right: auto;">
-            <?php //echo $form->input('beacon_ref','reference_estimote','text'); ?>
-        </div>
-       <div class="form-group">
-            <input type="text" name="name" id="name" class="form-control" placeholder="nom" style="width: 80%; margin-left: auto; margin-right: auto;">
-            <br/>
-        </div>
-        <div class="form-group">
-            Estimote Type :
-            <select name="type" class="target">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            <br/>
-        </div>
-        <div class="form-group">
-            <?php //echo $form->input('content', 'estimote_content_ckeditor', 'text') ?>
-            <textarea id="editor" name="content" style="display:none;!important visibility :hidden;!important"></textarea>
-            <br/>
-        </div>
-        <div class="form-group">
-            <input type="submit"  class="btn btn-primary"/>
-        </div>
-                </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <input type="text" name="beacon_ref" id="beacon_ref" class="form-control" placeholder="reference_estimote" style="width: 80%; margin-left: auto; margin-right: auto;">
+                            <?php //echo $form->input('beacon_ref','reference_estimote','text'); ?>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="nom" style="width: 80%; margin-left: auto; margin-right: auto;">
+                            <br/>
+                        </div>
+                        <div class="form-group">
+                            Estimote Type :
+                            <select name="type" class="target">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <br/>
+                        </div>
+                        <div class="form-group">
+                            <?php //echo $form->input('content', 'estimote_content_ckeditor', 'text') ?>
+                            <textarea id="editor" name="content" style="display:none;!important visibility :hidden;!important"></textarea>
+                            <br/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit"  class="btn btn-primary"/>
+                        </div>
+                    </fieldset>
                 </form>
             </div>
-         
         </div>
     </div>
 </div>
@@ -168,6 +181,12 @@ function go_stat(id, type)
 {
     var base = "<?php echo BASEPATH ?>";
     var stat_url = base + 'index.php/stat/stat_chart_' + type + '/?id='+id;
+    window.location.replace(stat_url);
+}
+
+function modif_beacon (id) {
+    var base = "<?php echo BASEPATH ?>";
+    var stat_url = base + 'index.php/modif/'+id;
     window.location.replace(stat_url);
 }
 
