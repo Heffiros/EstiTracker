@@ -78,6 +78,7 @@
         <p class="text-center">
             <br>
             <a href="#" style="width:212px;" class="btn btn-default btn-lg btn-huge lato" data-toggle="modal" data-target="#myModal1">Cliquez pour ajouter !</a>
+            <a type="submit" href="<?php echo BASEPATH ?>index.php/email" style="width:212px;" class="btn btn-success btn-lg btn-huge lato" >Envoyer Mail Promo</a>
             <br>
         </p>
     </div>

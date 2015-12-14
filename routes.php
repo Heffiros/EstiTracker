@@ -12,5 +12,9 @@ return array(
 	'stat/delete_stat' => 'Stat#deleteBeacon',
 	'stat/stat_chart_1/:id' => 'Stat#allBystanders',
 	'email' => 'Email#home',
-	'email/send' => 'Email#send'
+	'email/send' => 'Email#send',
+	'fidelite' => 'Fidelite#home',
+	'fidele/historique' => 'Fidelite#historiqueAchat',
+	
+
 );
