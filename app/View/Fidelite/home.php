@@ -5,7 +5,7 @@
 <script type="text/javascript" src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 
 
-<input list="test" type="text" id="choix" multiple>
+<input class="form-control" list="test" type="text" id="number_participant" multiple>
 <datalist id="test">
 <?php
 foreach ($fidele as $value) {
@@ -24,7 +24,7 @@ foreach ($fidele as $value) {
 
 
 $( "#target" ).click(function() {
-	var test = $( "#choix" ).val();	
+	var test = $( "#number_participant" ).val();	
 
 	var base = <?php echo BASEPATH ?>;
 	var fidele_url = base + 'index.php/fidele/historique';

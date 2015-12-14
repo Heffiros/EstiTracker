@@ -49,11 +49,11 @@ class Dispatcher
 						$this->variables,
 						$template_params ?: array()
 					);
-					/*if ($action == 'historiqueAchat') {
-						$renderer->render($params);
-					} else {*/
+					if ($action == 'historiqueAchat') {
+						echo $renderer->render($params);
+					} else {
   						$renderer->renderWithLayout($params);
-					//}
+					}
 					return;
 				} catch (Controller\Exception\Base $e) {
 					break;
