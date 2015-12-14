@@ -3,7 +3,8 @@
 <div class="calque">
 </div>
 
-<div class="slider1" style="background : url(<?php echo BASEPATH?>app/Media/slide1.jpg) fixed no-repeat ; height : 100%;">
+<div class="slider1" style="background :url(<?php echo BASEPATH?>app/Media/slide1.jpg) fixed center no-repeat;
+background-color : #264151; height : 100%;">
 </div>
 
 <section class="container-fluid" id="section1">
